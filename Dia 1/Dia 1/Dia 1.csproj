@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Dia_1</RootNamespace>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Dia_1</RootNamespace>
   </PropertyGroup>
 
 </Project>
