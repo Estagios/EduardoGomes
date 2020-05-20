@@ -15,8 +15,8 @@ namespace Dia_2_alternativo
             int soma = 0;
             string line;
 
-            string text = System.IO.File.ReadAllText(@"C:\Users\jose gomes\Desktop\Pasta de segurança da PEN do Edu, ou apenas coisinhas da 'escolinha'\Estágio (FCT)\Projeto\Dia 2\Dia 2\bin\Debug\Dia 2.txt");
-            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\jose gomes\Desktop\Pasta de segurança da PEN do Edu, ou apenas coisinhas da 'escolinha'\Estágio (FCT)\Projeto\Dia 2\Dia 2\bin\Debug\Dia 2.txt");
+            string text = System.IO.File.ReadAllText(@"Dia 2.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"Dia 2.txt");
 
 
             while ((line = file.ReadLine()) != null)
