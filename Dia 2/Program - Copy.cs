@@ -31,31 +31,28 @@ namespace Dia_2_alternativo
                 w = 0;
                 h = 0;
 
-                Console.WriteLine("Square feet of wrapping paper needed: " + soma);
-
-
                 var aux = line.Split('x');
                 l = Int32.Parse(aux[0]);
                 w = Int32.Parse(aux[1]);
                 h = Int32.Parse(aux[2]);
 
-                if ((l > w) && (l > h))
+                if ((l < w) && (l < h))
                 {
-                    area = w * h;
+                    area = l;
                 }
 
-                if ((w > l) && (w > h))
+                if ((w < l) && (w < h))
                 {
-                    area = l * h;
+                    area = w;
                 }
 
-                if ((h > w) && (h > l))
+                if ((h < w) && (h < l))
                 {
-                    area = w * l;
+                    area = h;
                 }
 
 
-                soma += (2 * l * w + 2 * w * h + 2 * h * l) + area;
+                soma += ((2 * l * w) + (2 * w * h) + (2 * h * l)) + area;
 
             }
             
