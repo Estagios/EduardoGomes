@@ -8,57 +8,66 @@ namespace Dia_2_alternativo
         static void Main(string[] args)
         {
             {
+                var fileContent = File.ReadAllLines(@"Dia 2 Example1.txt");
+                MeuAlgo(fileContent);
+                Console.WriteLine("\tResultado tem de ser: " + 58);
+            }
+            {
+                var fileContent = File.ReadAllLines(@"Dia 2 Example2.txt");
+                MeuAlgo(fileContent);
+                Console.WriteLine("\tResultado tem de ser: " + 43);
+            }
+            {
+                var fileContent = File.ReadAllLines(@"Dia 2 Example1+2.txt");
+                MeuAlgo(fileContent);
+                Console.WriteLine("\tResultado tem de ser: " + (43+58));
+            }
+            {
                 var fileContent = File.ReadAllLines(@"Dia 2.txt");
                 MeuAlgo(fileContent);
             }
+            
+            Console.WriteLine("- clica numa tecla para fechar -");
+            Console.ReadKey();
         }
 
         private static void MeuAlgo(string[] fileContent)
         {
-            int l = 0;
-            int w = 0;
-            int h = 0;
-            int min2 = 0;
-            int min = 0;
-            long soma = 0;
-            int area = 0;
-
-
+            var soma = 0;
 
             foreach (var line in fileContent)
             {
-                l = 0;
-                w = 0;
-                h = 0;
+                var l = 0;
+                var w = 0;
+                var h = 0;
+                var area = 0;
 
                 var aux = line.Split('x');
                 l = Int32.Parse(aux[0]);
                 w = Int32.Parse(aux[1]);
                 h = Int32.Parse(aux[2]);
 
-                if ((l < w) && (l < h))
+                if ((l > w) && (l > h))
                 {
-                    area = l;
+                    area = w * h;
                 }
 
-                if ((w < l) && (w < h))
+                if ((w > l) && (w > h))
                 {
-                    area = w;
+                    area = l * h;
                 }
 
-                if ((h < w) && (h < l))
+                if ((h > w) && (h > l))
                 {
-                    area = h;
+                    area = w * l;
                 }
 
 
-                soma += ((2 * l * w) + (2 * w * h) + (2 * h * l)) + area;
+                soma += (2 * l * w + 2 * w * h + 2 * h * l) + area;
 
             }
             
             Console.WriteLine("Square feet of wrapping paper needed: " + soma);
-
-            Console.ReadKey();
         }
     }
 }
