@@ -47,8 +47,6 @@ namespace ConsoleApp1
             // circula por todos os caracteres da string da variavel f
             for (i = 0; i < f.Length; i++)
             {
-                Console.WriteLine(i);
-                Console.ReadKey();
                 // retira o caracter referente à posicao i da string da variavel f
                 ch = f.Substring(i, 1).ToCharArray()[0];
                 if (i % 2 == 0)
