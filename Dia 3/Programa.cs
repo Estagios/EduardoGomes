@@ -1,51 +1,59 @@
 ﻿using System;
+using System.Text;
 using System.IO;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        struct Santa
+        // Registo Point (x,y) - Para o Pai Natal        
+        struct Point
         {
             public int x, y;
         }
-        struct Robot
+        // Registo RPoint (rx,ry) - Para o Robot
+        struct RPoint
         {
             public int rx, ry;
         }
 
         static void Main(string[] args)
         {
-            string f = "";
-            f = File.ReadAllText("Dia 3.txt");
 
-            int i, x, y, rx, ry;
+            var f = File.ReadAllText("Dia 3.txt");
+
+            int i, x, y, rx, ry, soma;
             char ch;
-            int n = 1;
+            int n = 0;
             int r = 0;
-            int total = 0;
+            soma = 1;
+            x = 0;
+            y = 0;
             rx = 0;
             ry = 0;
-            x = 0; 
-            y = 0;
 
 
-            Santa[] parray = new Santa[0];
-            Robot[] rarray = new Robot[0];
-            Santa point;
-            Robot rpoint;
+            // Array e a variavel do tipo (R)Point
+            RPoint rpoint;
             rpoint.rx = rx;
             rpoint.ry = ry;
+            RPoint[] rarray = { rpoint };
+
+            Point point;
             point.x = x;
             point.y = y;
-            
+            Point[] parray = { point };
 
+            // circula por todos os caracteres da string da variavel f
             for (i = 0; i < f.Length; i++)
             {
+                Console.WriteLine(i);
+                Console.ReadKey();
+                // retira o caracter referente à posicao i da string da variavel f
                 ch = f.Substring(i, 1).ToCharArray()[0];
-
                 if (i % 2 == 0)
                 {
+                    // atualiza a posicao (x, y) dependendo do caracter
                     switch (ch)
                     {
                         case '<':
@@ -61,21 +69,25 @@ namespace ConsoleApp1
                             y--;
                             break;
                     }
-
+                    // Guarda na variavel a posicao atual (x, y)
                     point.x = x;
                     point.y = y;
 
-                    Console.WriteLine($"parray[{i}]: x = {point.x}; y = {point.y}\n");
-
+                    // verifica se a posicao atual (x, y) nao existe no array
                     if (Array.IndexOf(parray, point) == -1)
                     {
+                        // o número de posicoes no array é incrementada, 
+                        // o array é redimencionado e a posicao atual (x, y) é colocada no array
                         n++;
                         Array.Resize(ref parray, n);
                         parray[n - 1] = point;
                     }
                 }
-                else
+
+                if (i % 2 != 0)
                 {
+
+                    // atualiza a posicao (rx,  ry) dependendo do caracter
                     switch (ch)
                     {
                         case '<':
@@ -91,15 +103,15 @@ namespace ConsoleApp1
                             ry--;
                             break;
                     }
-
+                    // Guarda na variavel a posicao atual (rx, ry)
                     rpoint.rx = rx;
                     rpoint.ry = ry;
 
-                    Console.WriteLine($"rarray[{i}]: x = {rpoint.rx}; y = {rpoint.ry}\n");
-
-
+                    // verifica se a posicao atual (rx, ry) nao existe no array
                     if (Array.IndexOf(rarray, rpoint) == -1)
                     {
+                        // o número de posicoes no array é incrementada, 
+                        // o array é redimencionado e a posicao atual (rx, ry) é colocada no array
                         r++;
                         Array.Resize(ref rarray, r);
                         rarray[r - 1] = rpoint;
@@ -107,15 +119,23 @@ namespace ConsoleApp1
                 }
             }
 
-                
-
+            // mostra todas as posicoes por onde passou (conteudo do array parray e do rarray)
             i = -1;
-            Console.WriteLine($"Número de casas que receberam presentes do Pai Natal: " + parray.Length);
-            Console.WriteLine($"Número de casas que receberam presentes do Robot-Natal: " + rarray.Length);
-            total = (parray.Length + rarray.Length);
-            Console.WriteLine(@"Número de casas que receberam presentes dos dois: " + total);
-            Console.WriteLine(@"Número de visitas totais: " + f.Length);
-            Console.ReadKey();
+            foreach (Point pointi in parray)
+            {
+                Console.WriteLine($"parray[{++i}]: x = {pointi.x}; y = {pointi.y}\n");
+            }
+            i = -1;
+            foreach (RPoint rointi in rarray)
+            {
+                Console.WriteLine($"rarray[{++i}]: x = {rointi.rx}; y = {rointi.ry}\n");
+            }
+
+            Console.WriteLine($"\nNúmero de casas que receberam presentes do Pai Natal: {parray.Length}");
+            Console.WriteLine($"\nNúmero de casas que receberam presentes do Robot Natal: {rarray.Length}");
+            soma += parray.Length + rarray.Length;
+            Console.WriteLine($"\nNúmero de casas que receberam presentes quer de um ou de outro: {soma}");
+
             Console.ReadKey();
         }
     }
