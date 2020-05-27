@@ -133,7 +133,6 @@ namespace ConsoleApp1
             Console.WriteLine($"\nNúmero de casas que receberam presentes do Robot Natal: {rarray.Length}");
             soma += parray.Length + rarray.Length;
             Console.WriteLine($"\nNúmero de casas que receberam presentes quer de um ou de outro: {soma}");
-
             Console.ReadKey();
         }
     }
