@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Dia_1
 {
@@ -10,13 +11,22 @@ namespace Dia_1
             int i = 0;
             int soma = 0;
 
-            string text = System.IO.File.ReadAllText(@"C:\Users\jose gomes\Desktop\Pasta de segurança da PEN do Edu, ou apenas coisinhas da 'escolinha'\Estágio (FCT)\Projeto\Dia 1\Dia 1\bin\Debug\Dia 1.txt");
-            
+            string text = System.IO.File.ReadAllText(@"Dia 1.txt");
+            Console.WriteLine(text.Count(x => x == '(') - text.Count(x => x == ')'));
+            var lista = text.Where(x => x == '(');
+            foreach (var item in lista)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine(text.Where(x => x == '(').Count());
+
+
             if (text != "")
             {
                 while (i != text.Length)
                 {
                     var cop = text.Substring(i, + 1);
+                    
                     i++;
                     if (cop == "(")
                     {
