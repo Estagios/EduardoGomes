@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8DE6F5E7-CE95-4D77-8344-B2C1A02418FA}</ProjectGuid>
+    <ProjectGuid>{53D58B55-1B8D-4E82-9FFD-77769996025F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Dia_2</RootNamespace>
-    <AssemblyName>Dia 2</AssemblyName>
+    <RootNamespace>Dia_6</RootNamespace>
+    <AssemblyName>Dia 6</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
