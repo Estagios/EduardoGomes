@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia 2", "Dia 2\Dia 2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia 6", "Dia 6\Dia 6.csproj", "{53D58B55-1B8D-4E82-9FFD-77769996025F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dia 10", "Dia 10\Dia 10.csproj", "{27EB0E25-FC02-4365-8EA0-B3FF0957E96F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{53D58B55-1B8D-4E82-9FFD-77769996025F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53D58B55-1B8D-4E82-9FFD-77769996025F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53D58B55-1B8D-4E82-9FFD-77769996025F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27EB0E25-FC02-4365-8EA0-B3FF0957E96F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EB0E25-FC02-4365-8EA0-B3FF0957E96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EB0E25-FC02-4365-8EA0-B3FF0957E96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EB0E25-FC02-4365-8EA0-B3FF0957E96F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
